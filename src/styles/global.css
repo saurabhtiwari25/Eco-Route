@@ -1,7 +1,5 @@
-/* Update global.css */
 @import "tailwindcss";
 
-/* In v4, you define your custom colors in a @theme block */
 @theme {
   --color-primary-bg: #0d121f;
   --color-accent-blue: #092040;
@@ -12,7 +10,6 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  /* Precision gradient background */
   background: linear-gradient(135deg, var(--color-primary-bg), var(--color-accent-blue));
   min-height: 100vh;
 }
