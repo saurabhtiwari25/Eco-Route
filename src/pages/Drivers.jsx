@@ -24,7 +24,7 @@ const Drivers = () => {
     }
   };
 
-  // ➕ Handle input
+  //  Handle input
   const handleChange = (e) => {
     setForm({
       ...form,
@@ -32,7 +32,7 @@ const Drivers = () => {
     });
   };
 
-  // ➕ Create driver
+  //  Create driver
   const handleSubmit = async () => {
     try {
       await createDriver({
@@ -57,7 +57,7 @@ const Drivers = () => {
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-4">Drivers</h1>
 
-      {/* ➕ Add Driver */}
+      {/*  Add Driver */}
       <div className="bg-white/10 p-4 rounded-xl mb-6">
         <h2 className="mb-2 font-semibold">Add Driver</h2>
 

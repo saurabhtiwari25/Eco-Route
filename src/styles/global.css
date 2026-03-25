@@ -1,9 +1,18 @@
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
+/* Update global.css */
+@import "tailwindcss";
+
+/* In v4, you define your custom colors in a @theme block */
+@theme {
+  --color-primary-bg: #0d121f;
+  --color-accent-blue: #092040;
+  --color-glass-bg: rgba(255, 255, 255, 0.08);
+  --color-glass-border: rgba(255, 255, 255, 0.06);
+}
 
 body {
   margin: 0;
-  font-family: Inter, sans-serif;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
+  font-family: 'Inter', sans-serif;
+  /* Precision gradient background */
+  background: linear-gradient(135deg, var(--color-primary-bg), var(--color-accent-blue));
+  min-height: 100vh;
 }
