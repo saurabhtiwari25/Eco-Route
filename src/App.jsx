@@ -13,16 +13,12 @@ function App() {
     <Router>
       <div className="flex min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white">
         
-        {/* Sidebar */}
         <Sidebar />
 
-        {/* Main Content */}
         <div className="flex-1 flex flex-col">
           
-          {/* Navbar */}
-          <Navbar />
+        <Navbar />
 
-          {/* Pages */}
           <div className="p-4">
             <Routes>
               <Route path="/" element={<Dashboard />} />
