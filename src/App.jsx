@@ -1,35 +1,87 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
+import Layout from "./Layout";
 
-import Sidebar from "./components/layout/Sidebar";
-import Navbar from "./components/layout/Navbar";
-
+import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Orders from "./pages/Orders";
 import Drivers from "./pages/Drivers";
 import RoutesPage from "./pages/Routes";
+import DriverDashboard from "./pages/DriverDashboard";
+
+import ProtectedRoute from "./components/auth/ProtectedRoute";
+
+import Settings from "./pages/Settings";
+import Help from "./pages/Help";
 
 function App() {
   return (
     <Router>
-      <div className="flex min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-        
-        <Sidebar />
+      <AuthProvider>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute allowedRoles={["admin"]}>
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/orders"
+              element={
+                <ProtectedRoute allowedRoles={["admin"]}>
+                  <Orders />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/drivers"
+              element={
+                <ProtectedRoute allowedRoles={["admin"]}>
+                  <Drivers />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/driver"
+              element={
+                <ProtectedRoute allowedRoles={["driver"]}>
+                  <DriverDashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/routes"
+              element={
+                <ProtectedRoute allowedRoles={["admin", "driver"]}>
+                  <RoutesPage />
+                </ProtectedRoute>
+              }
+            />
 
-        <div className="flex-1 flex flex-col">
-          
-        <Navbar />
-
-          <div className="p-4">
-            <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/orders" element={<Orders />} />
-              <Route path="/drivers" element={<Drivers />} />
-              <Route path="/routes" element={<RoutesPage />} />
-            </Routes>
-          </div>
-
-        </div>
-      </div>
+            // Add these routes inside your Routes component:
+            <Route
+              path="/settings"
+              element={
+                <ProtectedRoute allowedRoles={["admin", "driver"]}>
+                  <Settings />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/help"
+              element={
+                <ProtectedRoute allowedRoles={["admin", "driver"]}>
+                  <Help />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+        </Layout>
+      </AuthProvider>
     </Router>
   );
 }

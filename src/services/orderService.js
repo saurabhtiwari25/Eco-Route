@@ -1,13 +1,8 @@
-import api from "./api";
+import { api } from './api';
 
-// GET all orders
-export const getOrders = async () => {
-  const res = await api.get("/orders");
-  return res.data;
-};
-
-// CREATE order
-export const createOrder = async (order) => {
-  const res = await api.post("/orders", order);
-  return res.data;
+export const orderService = {
+  createOrder: (orderData) => api.post('/admin/orders', orderData),
+  getAllOrders: () => api.get('/orders'),
+  getOrderById: (id) => api.get(`/orders/${id}`),
+  updateOrderStatus: (id, status) => api.patch(`/orders/${id}`, { status }),
 };
