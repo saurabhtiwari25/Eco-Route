@@ -43,8 +43,8 @@ This system allows admins to:
 ##  Project Structure
 logistics-system/
 ├── backend/
+
 ├── frontend/
-├── ai/
 
 ---
 
