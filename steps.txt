@@ -1,0 +1,75 @@
+1️⃣ Frontend Setup (React / Web App)
+
+Step 1: Install project dependencies
+		npm install
+
+Step 2: Install Axios
+                npm install axios
+
+Step 3: Install Map Libraries
+                npm install leaflet react-leaflet
+
+Step 4: Install Leaflet Types (TypeScript support)
+                npm install @types/leaflet
+
+Step 5: Install React Router
+                 npm install react-router-dom
+
+Step 6: Start the Frontend Server
+                  npm run dev
+
+
+2️⃣ Backend Setup (Python + FastAPI)
+
+Step 7: Create a Virtual Environment
+                    python -m venv venv
+
+Step 8: Activate the Virtual Environment
+                    .\venv\Scripts\Activate
+         
+               On Mac/Linux:
+                                source venv/bin/activate
+
+Step 9: Install Backend Dependencies
+              Option 1:
+                       pip install -r requirements.txt   
+
+               Option 2: Install packages manually
+                        FastAPI
+                                 pip install fastapi==0.110.0
+                         
+                         Uvicorn
+                                   pip install "uvicorn[standard]"==0.29.0
+
+                          MongoDB Driver
+                                     pip install pymongo==4.6.1
+
+                           Environment Variables
+                                      pip install python-dotenv==1.0.1
+
+                            Password Hashing
+                                       pip install bcrypt==4.0.1
+                                       pip install "passlib[bcrypt]"==1.7.4
+
+                            JWT Authentication
+                                       pip install python-jose==3.3.0
+
+                             Data Validation
+                                        pip install pydantic==2.6.4
+
+                              Email Validation
+                                         pip install email-validator==2.1.0.post1
+
+                               WebSockets
+                                          pip install websockets==12.0
+
+3️⃣ Run the Backend Server
+               uvicorn app.main:app --reload
+
+       Server usually runs at:
+                 http://127.0.0.1:8000
+        
+        API Docs automatically available at:
+                  http://127.0.0.1:8000/docs
+
+
