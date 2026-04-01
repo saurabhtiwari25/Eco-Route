@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-  ***Eco_Route -- Logistics Optimization System***
+***Eco_Route -- Logistics Optimization System***
 
 <img width="1916" height="1079" alt="1" src="https://github.com/user-attachments/assets/bb626fc7-6eb0-49d8-9d13-a0c15d5726c6" />
 
