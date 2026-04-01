@@ -1,4 +1,4 @@
-1️⃣ Frontend Setup (React / Web App)
+Frontend Setup (React)
 
 Step 1: Install project dependencies
 		npm install
@@ -19,7 +19,7 @@ Step 6: Start the Frontend Server
                   npm run dev
 
 
-2️⃣ Backend Setup (Python + FastAPI)
+ Backend Setup (Python + FastAPI)
 
 Step 7: Create a Virtual Environment
                     python -m venv venv
@@ -63,7 +63,7 @@ Step 9: Install Backend Dependencies
                                WebSockets
                                           pip install websockets==12.0
 
-3️⃣ Run the Backend Server
+ Run the Backend Server
                uvicorn app.main:app --reload
 
        Server usually runs at:
